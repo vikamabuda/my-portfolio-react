@@ -1,6 +1,6 @@
 import React from 'react'
 import Title from '../layouts/Title'
-import { projectOne, projectTwo, projectThree,projectFour } from "../../assets/index";
+import { projectOne, projectTwo, projectThree,projectFour,projectSix } from "../../assets/index";
 import ProjectsCard from './ProjectsCard';
 
 const Projects = () => {
@@ -49,7 +49,7 @@ const Projects = () => {
           title="Random Password"
           des="Generate secure passwords effortlessly with our Java-based Random Password Generator, 
           ensuring robust online security for users and systems alike."
-          src={projectTwo}
+          src={projectSix}
         />
       </div>
     </section>
