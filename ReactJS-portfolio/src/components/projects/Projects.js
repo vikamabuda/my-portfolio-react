@@ -1,6 +1,6 @@
 import React from 'react'
 import Title from '../layouts/Title'
-import { projectOne, projectTwo, projectThree,projectFour,projectSix } from "../../assets/index";
+import { projectOne, projectTwo, projectThree,projectFour,projectFive,projectSix } from "../../assets/index";
 import ProjectsCard from './ProjectsCard';
 
 const Projects = () => {
@@ -25,7 +25,7 @@ const Projects = () => {
           title="Snake Game"
           des="Dive into the classic fun with our Snake Game project, a dynamic fusion of HTML, CSS, JavaScript, and Node.js. 
           Experience retro gaming excitement in a modern, interactive web environment."
-          src={projectTwo}
+          src={projectFive}
         />
         <ProjectsCard
           title="Chatting App"

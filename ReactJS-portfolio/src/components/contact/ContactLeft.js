@@ -16,8 +16,8 @@ const ContactLeft = () => {
           Software developer
         </p>
         <p className="text-base text-gray-400 tracking-wide">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis
-          ipsam autem cumque, accusantium dicta odio.
+        "Hi there! I'm a seasoned software developer passionate about crafting innovative solutions to solve real-world problems. With expertise in various technologies,
+         I thrive on turning ideas into reality. Let's collaborate and build something amazing together!"
         </p>
         <p className="text-base text-gray-400 flex items-center gap-2">
           Phone: <span className="text-lightText">+27630518193</span>
