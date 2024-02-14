@@ -1,6 +1,8 @@
 import React,{useState} from 'react'
 import Title from '../layouts/Title';
 import ContactLeft from './ContactLeft';
+import ReCAPTCHA from "react-google-recaptcha";
+
 
 const Contact = () => {
   const [username, setUsername] = useState("");
@@ -10,6 +12,9 @@ const Contact = () => {
   const [message, setMessage] = useState("");
   const [errMsg, setErrMsg] = useState("");
   const [successMsg, setSuccessMsg] = useState("");
+  const onChange = () =>{
+
+  }
 
   // ========== Email Validation start here ==============
   const emailValidation = () => {
@@ -140,6 +145,10 @@ const Contact = () => {
                   rows="8"
                 ></textarea>
               </div>
+              <ReCAPTCHA
+                sitekey="6LcqZnIpAAAAABQxexSZaVu2Je5sYnjaNxBJVlqD"
+                onChange={onChange}
+              />
               <div className="w-full">
                 <button
                   onClick={handleSend}
