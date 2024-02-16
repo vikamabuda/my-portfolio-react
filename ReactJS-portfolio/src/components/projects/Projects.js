@@ -22,7 +22,7 @@ const Projects = () => {
           des="Experience seamless web interactions with our project, blending HTML, CSS, and JavaScript to create intuitive and dynamic website experiences tailored to your needs."
           src={projectOne}
           githubLink="https://github.com/vikamabuda/techCompanyWebsite"
-          websiteLink="https://your-website.com"
+          websiteLink="https://gleaming-boba-90fedd.netlify.app/"
         />
         <ProjectsCard
           title="Chatting App"
@@ -50,7 +50,7 @@ const Projects = () => {
           des="Dive into the classic fun with our Snake Game project, a dynamic fusion of HTML, CSS, JavaScript, and Node.js. Experience retro gaming excitement in a modern, interactive web environment."
           src={projectFive}
           githubLink="https://github.com/vikamabuda/game"
-          websiteLink="https://your-website.com"
+          websiteLink="https://fluffy-sawine-3cfe7b.netlify.app/"
         />
         <ProjectsCard
           title="Random Password"

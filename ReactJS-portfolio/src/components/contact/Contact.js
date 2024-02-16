@@ -1,8 +1,8 @@
-import React,{useState} from 'react'
+import React, { useState } from 'react';
 import Title from '../layouts/Title';
 import ContactLeft from './ContactLeft';
 import ReCAPTCHA from "react-google-recaptcha";
-
+import emailjs from 'emailjs-com';
 
 const Contact = () => {
   const [username, setUsername] = useState("");
@@ -12,49 +12,35 @@ const Contact = () => {
   const [message, setMessage] = useState("");
   const [errMsg, setErrMsg] = useState("");
   const [successMsg, setSuccessMsg] = useState("");
-  const onChange = () =>{
-
-  }
-
-  // ========== Email Validation start here ==============
-  const emailValidation = () => {
-    return String(email)
-      .toLocaleLowerCase()
-      .match(/^\w+([-]?\w+)*@\w+([-]?\w+)*(\.\w{2,3})+$/);
-  };
-  // ========== Email Validation end here ================
 
   const handleSend = (e) => {
     e.preventDefault();
-    if (username === "") {
-      setErrMsg("Username is required!");
-    } else if (phoneNumber === "") {
-      setErrMsg("Phone number is required!");
-    } else if (email === "") {
-      setErrMsg("Please give your Email!");
-    } else if (!emailValidation(email)) {
-      setErrMsg("Give a valid Email!");
-    } else if (subject === "") {
-      setErrMsg("Plese give your Subject!");
-    } else if (message === "") {
-      setErrMsg("Message is required!");
-    } else {
-      setSuccessMsg(
-        `Thank you dear ${username}, Your Messages has been sent Successfully!`
-      );
-      setErrMsg("");
-      setUsername("");
-      setPhoneNumber("");
-      setEmail("");
-      setSubject("");
-      setMessage("");
-    }
+
+    // Your EmailJS template parameters
+    const templateParams = {
+      username: username,
+      email: email,
+      message: message
+    };
+
+    emailjs.send('service_njw4dqb', 'template_612d4uo', templateParams, 'BLSOoXsooh0sjwHB4')
+      .then((response) => {
+        console.log('Success!', response.status, response.text);
+        setSuccessMsg(`Thank you dear ${username}, Your Messages has been sent Successfully!`);
+        setErrMsg("");
+        setUsername("");
+        setPhoneNumber("");
+        setEmail("");
+        setSubject("");
+        setMessage("");
+      }, (error) => {
+        console.error('Failed...', error);
+        setErrMsg("Failed to send message. Please try again later.");
+      });
   };
+
   return (
-    <section
-      id="contact"
-      className="w-full py-20 border-b-[1px] border-b-black"
-    >
+    <section id="contact" className="w-full py-20 border-b-[1px] border-b-black">
       <div className="flex justify-center items-center text-center">
         <Title title="CONTACT" des="Contact With Me" />
       </div>
@@ -147,7 +133,7 @@ const Contact = () => {
               </div>
               <ReCAPTCHA
                 sitekey="6LcqZnIpAAAAABQxexSZaVu2Je5sYnjaNxBJVlqD"
-                onChange={onChange}
+                onChange={() => {}}
               />
               <div className="w-full">
                 <button
@@ -175,4 +161,4 @@ const Contact = () => {
   );
 }
 
-export default Contact
+export default Contact;
