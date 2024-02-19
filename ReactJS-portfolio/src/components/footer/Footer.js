@@ -1,6 +1,6 @@
-import React from 'react'
-import { FaFacebookF, FaTwitter, FaLinkedinIn } from "react-icons/fa";
-import {logo} from "../../assets/index"
+import React from 'react';
+import { FaGithub, FaLinkedinIn, FaInstagram } from "react-icons/fa";
+import { logo } from "../../assets/index";
 
 const Footer = () => {
   return (
@@ -8,15 +8,23 @@ const Footer = () => {
       <div className="w-full h-full flex flex-col gap-8">
         <img className="w-32" src={logo} alt="logo" />
         <div className="flex gap-4">
-          <span className="bannerIcon">
-            <FaFacebookF />
-          </span>
-          <span className="bannerIcon">
-            <FaTwitter />
-          </span>
-          <span className="bannerIcon">
-            <FaLinkedinIn />
-          </span>
+          
+          <a href="https://github.com/vikamabuda?tab=repositories">
+            <span className="bannerIcon">
+              <FaGithub />
+            </span>
+          </a>
+          
+          <a href="https://www.instagram.com/vikamabuda/">
+            <span className="bannerIcon">
+              <FaInstagram />
+            </span>
+          </a>
+          <a href="https://www.linkedin.com/in/vika-mabuda-15ab49225/">
+            <span className="bannerIcon">
+              <FaLinkedinIn />
+            </span>
+          </a>
         </div>
       </div>
       <div className="w-full h-full">
@@ -44,7 +52,7 @@ const Footer = () => {
           </li>
           <li>
             <span className="w-full text-lg relative hover:text-designColor duration-300 group cursor-pointer">
-              Blog
+              resume
               <span className="w-full h-[1px] bg-designColor inline-flex absolute left-0 -bottom-1 -translate-x-[100%] group-hover:translate-x-0 transition-transform duration-300"></span>
             </span>
           </li>
@@ -56,10 +64,8 @@ const Footer = () => {
           </li>
         </ul>
       </div>
-      
-        
     </div>
   );
 }
 
-export default Footer
+export default Footer;

@@ -13,10 +13,35 @@ const Contact = () => {
   const [errMsg, setErrMsg] = useState("");
   const [successMsg, setSuccessMsg] = useState("");
 
+  const validatePhone = (phoneNumber) => {
+    // Regular expression for phone number validation
+    const re = /^\d{10}$/; // Matches a 10-digit number
+    return re.test(String(phoneNumber).toLowerCase());
+  };
+
+  const validateEmail = (email) => {
+    // Regular expression for email format validation
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(String(email).toLowerCase());
+  };
+
   const handleSend = (e) => {
     e.preventDefault();
 
-    // Your EmailJS template parameters
+    if (username.trim() === "") {
+      setErrMsg("Username is required!");
+      return;
+    } else if (!validateEmail(email)) {
+      setErrMsg("Please provide a valid email address!");
+      return;
+    } else if (!validatePhone(phoneNumber)) {
+      setErrMsg("Please provide a valid phone number!");
+      return;
+    } else if (message.trim() === "") {
+      setErrMsg("Message is required!");
+      return;
+    }
+
     const templateParams = {
       username: username,
       email: email,
@@ -33,7 +58,8 @@ const Contact = () => {
         setEmail("");
         setSubject("");
         setMessage("");
-      }, (error) => {
+      })
+      .catch((error) => {
         console.error('Failed...', error);
         setErrMsg("Failed to send message. Please try again later.");
       });
@@ -82,7 +108,7 @@ const Contact = () => {
                     onChange={(e) => setPhoneNumber(e.target.value)}
                     value={phoneNumber}
                     className={`${
-                      errMsg === "Phone number is required!" &&
+                      errMsg === "Please provide a valid phone number!" &&
                       "outline-designColor"
                     } contactInput`}
                     type="text"
@@ -97,7 +123,7 @@ const Contact = () => {
                   onChange={(e) => setEmail(e.target.value)}
                   value={email}
                   className={`${
-                    errMsg === "Please give your Email!" &&
+                    errMsg === "Please provide a valid email address!" &&
                     "outline-designColor"
                   } contactInput`}
                   type="email"
@@ -111,7 +137,7 @@ const Contact = () => {
                   onChange={(e) => setSubject(e.target.value)}
                   value={subject}
                   className={`${
-                    errMsg === "Plese give your Subject!" &&
+                    errMsg === "Please provide your Subject!" &&
                     "outline-designColor"
                   } contactInput`}
                   type="text"
@@ -143,16 +169,6 @@ const Contact = () => {
                   Send Message
                 </button>
               </div>
-              {errMsg && (
-                <p className="py-3 bg-gradient-to-r from-[#1e2024] to-[#23272b] shadow-shadowOne text-center text-orange-500 text-base tracking-wide animate-bounce">
-                  {errMsg}
-                </p>
-              )}
-              {successMsg && (
-                <p className="py-3 bg-gradient-to-r from-[#1e2024] to-[#23272b] shadow-shadowOne text-center text-green-500 text-base tracking-wide animate-bounce">
-                  {successMsg}
-                </p>
-              )}
             </form>
           </div>
         </div>

@@ -27,7 +27,7 @@
     }
 
     .active {
-        color: white;
+        color: #D9D9D9;
     }
 
     .scrollbar-hide::-webkit-scrollbar {
