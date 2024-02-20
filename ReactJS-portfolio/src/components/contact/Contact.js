@@ -12,6 +12,7 @@ const Contact = () => {
   const [message, setMessage] = useState("");
   const [errMsg, setErrMsg] = useState("");
   const [successMsg, setSuccessMsg] = useState("");
+  const [recaptchaCompleted, setRecaptchaCompleted] = useState(false); // Track ReCAPTCHA completion
 
   const validatePhone = (phoneNumber) => {
     // Regular expression for phone number validation
@@ -27,6 +28,11 @@ const Contact = () => {
 
   const handleSend = (e) => {
     e.preventDefault();
+
+    if (!recaptchaCompleted) {
+      setErrMsg("Please complete the ReCAPTCHA!");
+      return;
+    }
 
     if (username.trim() === "") {
       setErrMsg("Username is required!");
@@ -159,7 +165,7 @@ const Contact = () => {
               </div>
               <ReCAPTCHA
                 sitekey="6LcqZnIpAAAAABQxexSZaVu2Je5sYnjaNxBJVlqD"
-                onChange={() => {}}
+                onChange={() => setRecaptchaCompleted(true)} // Set recaptchaCompleted to true when ReCAPTCHA is completed
               />
               <div className="w-full">
                 <button
