@@ -12,48 +12,49 @@ const Resume = () => {
   return (
     <section id="resume" className="w-full py-20 border-b-[1px] border-b-black">
       <div className="flex justify-center items-center text-center">
-        <Title title="-1 YEARS OF EXPERIENCE" des="My Resume" />
+        <Title title="" des="My Resume" />
       </div>
-      <div>
-        <ul className="w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4">
-          <li
-            onClick={() => {
-              setEducationData(true);
-              setSkillData(false);
-              setExperienceData(false);
-            }}
-            className={`${
-              educationData ? 'border-designColor rounded-lg' : 'border-transparent'
-            } resumeLi`}
-          >
-            Education
-          </li>
-          <li
-            onClick={() => {
-              setEducationData(false);
-              setSkillData(true);
-              setExperienceData(false);
-            }}
-            className={`${
-              skillData ? 'border-designColor rounded-lg' : 'border-transparent'
-            } resumeLi`}
-          >
-            Professional Skills
-          </li>
-          <li
-            onClick={() => {
-              setEducationData(false);
-              setSkillData(false);
-              setExperienceData(true);
-            }}
-            className={`${
-              experienceData ? 'border-designColor rounded-lg' : 'border-transparent'
-            } resumeLi`}
-          >
-            Experience
-          </li>
-        </ul>
-      </div>
+      <div style={{ display: 'flex', justifyContent: 'center' }}>
+  <ul className="w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4">
+    <li
+      onClick={() => {
+        setEducationData(true);
+        setSkillData(false);
+        setExperienceData(false);
+      }}
+      className={`${
+        educationData ? 'border-designColor rounded-lg' : 'border-transparent'
+      } resumeLi`}
+    >
+      Education
+    </li>
+    <li
+      onClick={() => {
+        setEducationData(false);
+        setSkillData(true);
+        setExperienceData(false);
+      }}
+      className={`${
+        skillData ? 'border-designColor rounded-lg' : 'border-transparent'
+      } resumeLi`}
+    >
+      Professional Skills
+    </li>
+    <li
+      onClick={() => {
+        setEducationData(false);
+        setSkillData(false);
+        setExperienceData(true);
+      }}
+      className={`${
+        experienceData ? 'border-designColor rounded-lg' : 'border-transparent'
+      } resumeLi`}
+    >
+      Experience
+    </li>
+  </ul>
+</div>
+
       {educationData && <Education />}
       {skillData && <Skills />}
       {experienceData && <Experience />}

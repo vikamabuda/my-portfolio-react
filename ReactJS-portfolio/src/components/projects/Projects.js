@@ -12,7 +12,8 @@ const Projects = () => {
     >
       <div className="flex justify-center items-center text-center">
         <Title
-          title="VISIT MY PORTFOLIO AND KEEP YOUR FEEDBACK"
+          title="
+          "
           des="My Projects"
         />
       </div>
@@ -29,21 +30,21 @@ const Projects = () => {
           des="Engage in real-time communication with our React-powered Chat App, seamlessly merging modern design with cutting-edge functionality for an immersive messaging experience."
           src={projectTwo}
           githubLink="https://github.com/your-username/your-repository"
-          websiteLink="https://your-website.com"
+          websiteLink="https://github.com/vikamabuda/ChatApp-Reactjs"
         />
         <ProjectsCard
           title="BANKING APPLICATION"
           des="Explore the future of banking with our Python-powered Banking Application, delivering secure transactions, robust account management, and seamless user experiences for financial empowerment."
           src={projectThree}
           githubLink="https://github.com/vikamabuda/pythonBankingSystem"
-          websiteLink="https://your-website.com"
+          websiteLink="https://github.com/vikamabuda/pythonBankingSystem"
         />
         <ProjectsCard
           title="Financial Calculator"
           des="Unlock financial insights with our Python-powered Financial Calculator, enabling precise calculations for investments, loans, and savings to empower informed financial decisions."
           src={projectFour}
           githubLink="https://github.com/vikamabuda/financialCalculator"
-          websiteLink="https://your-website.com"
+          websiteLink="https://github.com/vikamabuda/financialCalculator"
         />
         <ProjectsCard
           title="Snake Game"
@@ -57,7 +58,7 @@ const Projects = () => {
           des="Generate secure passwords effortlessly with our Java-based Random Password Generator, ensuring robust online security for users and systems alike."
           src={projectSix}
           githubLink="https://github.com/your-username/your-repository"
-          websiteLink="https://your-website.com"
+          websiteLink="https://github.com/your-username/your-repository"
         />
       </div>
     </section>

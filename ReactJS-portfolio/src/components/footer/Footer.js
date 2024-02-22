@@ -8,22 +8,14 @@ const Footer = () => {
       <div className="w-full h-full flex flex-col gap-8">
         <img className="w-32" src={logo} alt="logo" />
         <div className="flex gap-4">
-          
-          <a href="https://github.com/vikamabuda?tab=repositories">
-            <span className="bannerIcon">
-              <FaGithub />
-            </span>
+          <a href="https://github.com/vikamabuda?tab=repositories" className="bannerIcon">
+            <FaGithub />
           </a>
-          
-          <a href="https://www.instagram.com/vikamabuda/">
-            <span className="bannerIcon">
-              <FaInstagram />
-            </span>
+          <a href="https://www.instagram.com/vikamabuda/" className="bannerIcon">
+            <FaInstagram />
           </a>
-          <a href="https://www.linkedin.com/in/vika-mabuda-15ab49225/">
-            <span className="bannerIcon">
-              <FaLinkedinIn />
-            </span>
+          <a href="https://www.linkedin.com/in/vika-mabuda-15ab49225/" className="bannerIcon">
+            <FaLinkedinIn />
           </a>
         </div>
       </div>
@@ -33,34 +25,34 @@ const Footer = () => {
         </h3>
         <ul className="flex flex-col gap-4 font-titleFont font-medium py-6 overflow-hidden">
           <li>
-            <span className="w-full text-lg relative hover:text-designColor duration-300 group cursor-pointer">
-              About
+            <a href="#home" className="w-full text-lg relative hover:text-designColor duration-300 group cursor-pointer">
+              Home
               <span className="w-full h-[1px] bg-designColor inline-flex absolute left-0 -bottom-1 -translate-x-[100%] group-hover:translate-x-0 transition-transform duration-300"></span>
-            </span>
+            </a>
           </li>
           <li>
-            <span className="w-full text-lg relative hover:text-designColor duration-300 group cursor-pointer">
-              Portfolio
+            <a href="#projects" className="w-full text-lg relative hover:text-designColor duration-300 group cursor-pointer">
+              Projects
               <span className="w-full h-[1px] bg-designColor inline-flex absolute left-0 -bottom-1 -translate-x-[100%] group-hover:translate-x-0 transition-transform duration-300"></span>
-            </span>
+            </a>
           </li>
           <li>
-            <span className="w-full text-lg relative hover:text-designColor duration-300 group cursor-pointer">
-              Services
+            <a href="#features" className="w-full text-lg relative hover:text-designColor duration-300 group cursor-pointer">
+              Features
               <span className="w-full h-[1px] bg-designColor inline-flex absolute left-0 -bottom-1 -translate-x-[100%] group-hover:translate-x-0 transition-transform duration-300"></span>
-            </span>
+            </a>
           </li>
           <li>
-            <span className="w-full text-lg relative hover:text-designColor duration-300 group cursor-pointer">
-              resume
+            <a href="#resume" className="w-full text-lg relative hover:text-designColor duration-300 group cursor-pointer">
+              Resume
               <span className="w-full h-[1px] bg-designColor inline-flex absolute left-0 -bottom-1 -translate-x-[100%] group-hover:translate-x-0 transition-transform duration-300"></span>
-            </span>
+            </a>
           </li>
           <li>
-            <span className="w-full text-lg relative hover:text-designColor duration-300 group cursor-pointer">
+            <a href="#contact" className="w-full text-lg relative hover:text-designColor duration-300 group cursor-pointer">
               Contact
               <span className="w-full h-[1px] bg-designColor inline-flex absolute left-0 -bottom-1 -translate-x-[100%] group-hover:translate-x-0 transition-transform duration-300"></span>
-            </span>
+            </a>
           </li>
         </ul>
       </div>

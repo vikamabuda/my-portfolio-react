@@ -19,7 +19,7 @@ const Education = () => {
           <ResumeCard
             title="BSc in Computer Science"
             subTitle="University of the Western Cape (2019 - 2022)"
-            result="4/4"
+            result=""
             des="The training provided by universities in order to prepare people to work in various sectors of the economy or areas of culture."
           />
           
