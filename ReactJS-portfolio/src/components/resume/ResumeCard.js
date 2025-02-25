@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ResumeCard = ({title, subTitle, result, des, de, d}) => {
+const ResumeCard = ({title, subTitle, result, des, de, d,di}) => {
   return (
     <div className="w-full h-auto group flex">
       <div className="w-12 h-[8px] bgOpacity mt-20 relative">
@@ -28,6 +28,7 @@ const ResumeCard = ({title, subTitle, result, des, de, d}) => {
           {des}<br />
           {de}<br />
           {d}<br />
+          {di}<br />
         </p>
       </div>
     </div>
