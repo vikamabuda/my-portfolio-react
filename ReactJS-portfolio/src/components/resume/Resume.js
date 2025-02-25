@@ -10,56 +10,62 @@ const Resume = () => {
   const [experienceData, setExperienceData] = useState(false);
 
   return (
-    <section id="resume" className="w-full py-20 border-b-[1px] border-b-black">
-      <div className="flex justify-center items-center text-center">
+    <section id="resume" className="w-full py-20 border-b-[5px] border-b-black">
+      <div className="flex justify-center items-center text-center mb-10">
         <Title title="" des="My Resume" />
       </div>
-      <div style={{ display: 'flex', justifyContent: 'center' }}>
-  <ul className="w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4">
-    <li
-      onClick={() => {
-        setEducationData(true);
-        setSkillData(false);
-        setExperienceData(false);
-      }}
-      className={`${
-        educationData ? 'border-designColor rounded-lg' : 'border-transparent'
-      } resumeLi`}
-    >
-      Education
-    </li>
-    <li
-      onClick={() => {
-        setEducationData(false);
-        setSkillData(true);
-        setExperienceData(false);
-      }}
-      className={`${
-        skillData ? 'border-designColor rounded-lg' : 'border-transparent'
-      } resumeLi`}
-    >
-      Professional Skills
-    </li>
-    <li
-      onClick={() => {
-        setEducationData(false);
-        setSkillData(false);
-        setExperienceData(true);
-      }}
-      className={`${
-        experienceData ? 'border-designColor rounded-lg' : 'border-transparent'
-      } resumeLi`}
-    >
-      Experience
-    </li>
-  </ul>
-</div>
 
-      {educationData && <Education />}
-      {skillData && <Skills />}
-      {experienceData && <Experience />}
+      {/* Navigation Bar */}
+      <div className="w-full max-w-[1200px] mx-auto">
+        <ul className="w-full grid grid-cols-3 text-center border-b-2 border-gray-700">
+          <li
+            onClick={() => {
+              setEducationData(true);
+              setSkillData(false);
+              setExperienceData(false);
+            }}
+            className={`${
+              educationData ? 'border-b-4 border-designColor bg-opacity-80' : 'border-transparent'
+            } flex-1 text-lg font-semibold cursor-pointer py-4`}
+          >
+            Education
+          </li>
+          <li
+            onClick={() => {
+              setEducationData(false);
+              setSkillData(true);
+              setExperienceData(false);
+            }}
+            className={`${
+              skillData ? 'border-b-4 border-designColor bg-opacity-80' : 'border-transparent'
+            } flex-1 text-lg font-semibold cursor-pointer py-4`}
+          >
+            Professional Skills
+          </li>
+          <li
+            onClick={() => {
+              setEducationData(false);
+              setSkillData(false);
+              setExperienceData(true);
+            }}
+            className={`${
+              experienceData ? 'border-b-4 border-designColor bg-opacity-80' : 'border-transparent'
+            } flex-1 text-lg font-semibold cursor-pointer py-4`}
+          >
+            Experience
+          </li>
+        </ul>
+      </div>
+
+      {/* Content Sections */}
+      <div className="w-full max-w-[1200px] mx-auto mt-10">
+        {educationData && <Education />}
+        {skillData && <Skills />}
+        {experienceData && <Experience />}
+      </div>
     </section>
   );
 };
 
 export default Resume;
+
